@@ -16,7 +16,7 @@ data class WeatherForecast(
 
 
 @Composable
-fun DailyForecastColumn(forecastList: List<WeatherForecast>) {
+fun DailyForecastColumn(forecastList: List<com.jetpackapp.compose.model.WeatherForecast>?) {
     LazyColumn(
         modifier = Modifier
             .fillMaxWidth()

@@ -1,7 +1,13 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services") version "4.3.8" apply false
+    id("com.google.dagger.hilt.android") version "2.48" apply false
+    kotlin("kapt")
 }
+
+apply(plugin = "com.google.dagger.hilt.android")
+apply(plugin = "com.google.gms.google-services")
 
 android {
     namespace = "com.jetpackapp.compose"
@@ -69,4 +75,18 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    implementation ("com.google.dagger:hilt-android:2.48")
+
+    kapt ("com.google.dagger:hilt-android-compiler:2.48")
+    kapt ("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0")
+
+    implementation ("com.google.dagger:hilt-android:2.48")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.2.0")
+
+}
+kapt {
+    correctErrorTypes = true
 }
